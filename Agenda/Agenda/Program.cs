@@ -13,6 +13,7 @@ namespace Agenda
             Console.WriteLine("Primul Proiect");
             Console.WriteLine("Testare Secundar");
             Console.WriteLine("Inca un test!");
+            Console.WriteLine("Inca un test!!!");
             Console.ReadKey();
         }
     }
