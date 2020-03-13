@@ -24,5 +24,16 @@ namespace Agenda
             grup = _grup;
         }
 
+        public Persoana(string date_initializare)
+        {
+            //urmeaza sa completez
+        }
+
+        override
+        public string ToString()
+        {
+            return nume + " " + prenume + " " + " face parte din grupul: " + grup;
+        }
+
     }
 }

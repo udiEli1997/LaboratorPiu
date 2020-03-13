@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Agenda
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Primul Proiect");
-            Console.WriteLine("Testare Secundar");
-            Console.WriteLine("Inca un test!");
-            Console.WriteLine("Inca un test!!!");
+            Persoana p1 = new Persoana("Udisteanu", "Iulian-Elisei", "udisteanu.iulian@outlook.com","0748454948", Grup.Servici);
+            Console.WriteLine(p1);
             Console.ReadKey();
         }
     }
