@@ -11,6 +11,7 @@ namespace Agenda
         static void Main(string[] args)
         {
             Console.WriteLine("Primul Proiect");
+            Console.WriteLine("Testare Secundar");
             Console.ReadKey();
         }
     }
