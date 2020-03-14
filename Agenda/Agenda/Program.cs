@@ -9,7 +9,7 @@ namespace Agenda
     {
         static void Main(string[] args)
         {
-            Persoana p1 = new Persoana("Udisteanu", "Iulian-Elisei", "udisteanu.iulian@outlook.com","0748454948", Grup.Servici);
+            Persoana p1 = new Persoana("Udisteanu,Iulian-Elisei,udisteanu.iulian@outlook.com,0748454948,Prieteni");
             Console.WriteLine(p1);
             Console.ReadKey();
         }

@@ -11,6 +11,10 @@ namespace Agenda
         Persoana[] contacte;
         int numarContacte;
 
+        public ListaPersoane()
+        {
+            
+        }
 
     }
 }
