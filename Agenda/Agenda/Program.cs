@@ -7,6 +7,23 @@ namespace Agenda
 {
     class Program
     {
+        public static Persoana citirePersoana()
+        {
+            string nume, prenume, email, numar, grup1;
+            Grup grup;
+            Console.WriteLine("Introduceti numele Persoanei: ");
+            nume = Console.ReadLine();
+            Console.WriteLine("Introduceti prenumele Persoanei: ");
+            prenume = Console.ReadLine();
+            Console.WriteLine("Introduceti email-lul Persoanei: ");
+            email = Console.ReadLine();
+            Console.WriteLine("Introduceti numarul de telefon al Persoanei: ");
+            numar = Console.ReadLine();
+            Console.WriteLine("Introduceti grupul Persoanei: ");
+            grup1 = Console.ReadLine();
+            Enum.TryParse(grup1, out grup);
+            return  new Persoana(nume, prenume, email, numar, grup);
+        }
         static void Main(string[] args)
         {
             Persoana p1 = new Persoana("Udisteanu,Iulian-Elisei,udisteanu.iulian@outlook.com,0748454948,Prieteni");
@@ -28,21 +45,8 @@ namespace Agenda
             Console.WriteLine(p1);
             Console.WriteLine(p2);
 
-            string nume, prenume, email, numar,grup1;
-            Grup grup;
-            Console.WriteLine("Introduceti numele Persoanei: ");
-            nume = Console.ReadLine();
-            Console.WriteLine("Introduceti prenumele Persoanei: ");
-            prenume = Console.ReadLine();
-            Console.WriteLine("Introduceti email-lul Persoanei: ");
-            email = Console.ReadLine();
-            Console.WriteLine("Introduceti numarul de telefon al Persoanei: ");
-            numar = Console.ReadLine();
-            Console.WriteLine("Introduceti grupul Persoanei: ");
-            grup1 = Console.ReadLine();
-            Enum.TryParse(grup1, out grup);
-            Persoana persoanaCititta = new Persoana(nume, prenume, email, numar, grup);
-            Console.WriteLine(persoanaCititta);
+            Persoana persoanaCitita = citirePersoana();
+            Console.WriteLine(persoanaCitita);
             Console.ReadKey();
         }
     }
