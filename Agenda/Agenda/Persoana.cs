@@ -12,10 +12,6 @@ namespace Agenda
         public const int MAI_MARE = 1;
         public const int EGAL = 0;
         public const int MAI_MIC = 1;
-        private string nume;
-        string prenume;
-        string email;
-        string numar_telegon;
         Grup grup;
 
         public string NumeComplet
@@ -25,47 +21,11 @@ namespace Agenda
                 return Nume + " " + Prenume;
             }
         }
-        public string Nume{
-            get{
-                return nume; 
-            }
-            set
-            {
-                nume = value;
-            }
-        }
-        public string Prenume {
-            get
-            {
-                return prenume;
-            }
-            set
-            {
-                prenume = value;
-            }
-        }
-        public string Email {
-            get
-            {
-                return email;
-            }
-            set
-            {
-                email = value;
-            }
-        }
+        public string Nume { get; set; }
+        public string Prenume { get; set; }
+        public string Email { get; set; }
 
-        public string NumarTelefon
-        {
-            get
-            {
-                return numar_telegon;
-            }
-            set
-            {
-                numar_telegon = value;
-            }
-        }
+        public string NumarTelefon { get; set; }
 
         public Grup Grup
         {
@@ -104,7 +64,7 @@ namespace Agenda
         override
         public string ToString()
         {
-            return nume + " " + prenume + " " + " face parte din grupul: " + grup;
+            return Nume + " " + Prenume + " " + " face parte din grupul: " + Grup;
         }
 
         public int Compara(Persoana _pers)
