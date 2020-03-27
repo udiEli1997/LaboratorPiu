@@ -9,19 +9,84 @@ namespace Agenda
     public enum Grup{ Necunoscut,Prieteni,Servici,Familie };
     class Persoana
     {
-        string nume;
+        public const int MAI_MARE = 1;
+        public const int EGAL = 0;
+        public const int MAI_MIC = 1;
+        private string nume;
         string prenume;
         string email;
         string numar_telegon;
         Grup grup;
 
+        public string NumeComplet
+        {
+            get
+            {
+                return Nume + " " + Prenume;
+            }
+        }
+        public string Nume{
+            get{
+                return nume; 
+            }
+            set
+            {
+                nume = value;
+            }
+        }
+        public string Prenume {
+            get
+            {
+                return prenume;
+            }
+            set
+            {
+                prenume = value;
+            }
+        }
+        public string Email {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+            }
+        }
+
+        public string NumarTelefon
+        {
+            get
+            {
+                return numar_telegon;
+            }
+            set
+            {
+                numar_telegon = value;
+            }
+        }
+
+        public Grup Grup
+        {
+            get
+            {
+                return grup;
+            }
+            set
+            {
+                grup = value;
+            }
+        }
+        
+
         public Persoana(string _nume,string _prenume,string _email,string _numar,Grup _grup)
         {
             //constructor cu datele de initializare separate
-            nume = _nume;
-            prenume = _prenume;
-            email = _email;
-            numar_telegon = _numar;
+            Nume = _nume;
+            Prenume = _prenume;
+            Email = _email;
+            NumarTelefon = _numar;
             grup = _grup;
         }
 
@@ -29,10 +94,10 @@ namespace Agenda
         {
             //constructor cu datele de initializare intr-un singur sir , despartite prin ,
             string[] date = date_initializare.Split(',');
-            nume = date[0];
-            prenume = date[1];
-            email = date[2];
-            numar_telegon = date[3];
+            Nume = date[0];
+            Prenume = date[1];
+            Email = date[2];
+            NumarTelefon = date[3];
             Enum.TryParse(date[4],out grup);
         }
 
@@ -40,6 +105,11 @@ namespace Agenda
         public string ToString()
         {
             return nume + " " + prenume + " " + " face parte din grupul: " + grup;
+        }
+
+        public int compara(Persoana _pers)
+        {
+            return this.NumeComplet.CompareTo(_pers.NumeComplet);
         }
 
     }
