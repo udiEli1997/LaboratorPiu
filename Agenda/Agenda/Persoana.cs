@@ -107,7 +107,7 @@ namespace Agenda
             return nume + " " + prenume + " " + " face parte din grupul: " + grup;
         }
 
-        public int compara(Persoana _pers)
+        public int Compara(Persoana _pers)
         {
             return this.NumeComplet.CompareTo(_pers.NumeComplet);
         }
