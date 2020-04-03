@@ -116,6 +116,7 @@ namespace Agenda
                         if (gasit != -1)
                         {
                             ModificarePersoana(persoane, gasit);
+                            adminPersoane.UpdatePersoana(persoane, nrPersoane);
                         }
                         else
                         {
