@@ -4,14 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agenda
+namespace NivelModele
 {
-    public enum Grup{ Necunoscut,Prieteni,Servici,Familie };
-    class Persoana
+   
+    public class Persoana
     {
         public const int MAI_MARE = 1;
         public const int EGAL = 0;
         public const int MAI_MIC = 1;
+        private const char SEPARATOR_PRINCIPAL_FISIER = ';';
+        private const int NUME = 0;
+        private const int PRENUME = 1;
+        private const int EMAIL = 2;
+        private const int NUMAR = 3;
+        private const int GRUP = 4;
         Grup grup;
 
         public string NumeComplet
@@ -52,13 +58,13 @@ namespace Agenda
 
         public Persoana(string date_initializare)
         {
-            //constructor cu datele de initializare intr-un singur sir , despartite prin ,
-            string[] date = date_initializare.Split(',');
-            Nume = date[0];
-            Prenume = date[1];
-            Email = date[2];
-            NumarTelefon = date[3];
-            Enum.TryParse(date[4],out grup);
+            //constructor cu datele de initializare intr-un singur sir , despartite prin ;
+            string[] date = date_initializare.Split(SEPARATOR_PRINCIPAL_FISIER);
+            Nume = date[NUME];
+            Prenume = date[PRENUME];
+            Email = date[EMAIL];
+            NumarTelefon = date[NUMAR];
+            Enum.TryParse(date[GRUP],out grup);
         }
 
         override
@@ -70,6 +76,11 @@ namespace Agenda
         public int Compara(Persoana _pers)
         {
             return this.NumeComplet.CompareTo(_pers.NumeComplet);
+        }
+
+        public string ConversieLaSir_PentruFisier()
+        {
+            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}", SEPARATOR_PRINCIPAL_FISIER, (Nume ?? " NECUNOSCUT "), (Prenume ?? " NECUNOSCUT "), (Email ?? " NECUNOSCUT "), (NumarTelefon ?? " NECUNOSCUT "), Grup);
         }
 
     }

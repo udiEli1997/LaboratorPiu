@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7661C586-F6D3-44CE-828D-808457B19934}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D9A94DD4-AC0C-4CEB-8CDD-B3C61721890F}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Agenda</RootNamespace>
-    <AssemblyName>Agenda</AssemblyName>
+    <RootNamespace>NivelModele</RootNamespace>
+    <AssemblyName>NivelModele</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,26 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListaPersoane.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Grup.cs" />
+    <Compile Include="Persoana.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StocareFactory.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NivelAccesDate\NivelAccesDate.csproj">
-      <Project>{9613d472-c1ce-4eb6-8a74-77ac1e002fb7}</Project>
-      <Name>NivelAccesDate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NivelModele\NivelModele.csproj">
-      <Project>{d9a94dd4-ac0c-4ceb-8cdd-b3c61721890f}</Project>
-      <Name>NivelModele</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
