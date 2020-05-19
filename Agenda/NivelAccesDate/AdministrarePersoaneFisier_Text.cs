@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using NivelModele;
 using System.IO;
+using System.Collections;
 
 namespace NivelAccesDate
 {
     public class AdministrarePersoaneFisier_Text : IStocareData
     {
+        private const int ID_PRIMA_PERSOANA = 1;
+        private const int INCREMENT = 1;
         private const int PAS_ALOCARE = 10;
         string NumeFisier { get; set; }
 
@@ -20,6 +23,7 @@ namespace NivelAccesDate
         }
         public void AddPersoana(Persoana pers)
         {
+            pers.IdPersoana = GetId();
             try
             {
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisier, true))
@@ -37,9 +41,9 @@ namespace NivelAccesDate
             }
         }
 
-        public Persoana[] GetPersoane(out int nrPersoane)
+        public List<Persoana> GetPersoane()
         {
-            Persoana[] persoane = new Persoana[PAS_ALOCARE];
+            List<Persoana> persoane = new List<Persoana>();
 
             try
             {
@@ -47,16 +51,11 @@ namespace NivelAccesDate
                 using (StreamReader sr = new StreamReader(NumeFisier))
                 {
                     string line;
-                    nrPersoane = 0;
 
-                    
                     while ((line = sr.ReadLine()) != null)
                     {
-                        persoane[nrPersoane++] = new Persoana(line);
-                        if (nrPersoane == PAS_ALOCARE)
-                        {
-                            Array.Resize(ref persoane, nrPersoane + PAS_ALOCARE);
-                        }
+                        Persoana p = new Persoana(line);
+                        persoane.Add(p);
                     }
                 }
             }
@@ -72,15 +71,80 @@ namespace NivelAccesDate
             return persoane;
         }
 
-        public bool UpdatePersoana(Persoana[] persoane, int nrPersoane)
+        public bool UpdatePersoana(Persoana persoanaActualizata)
         {
+
+            List<Persoana> persoane = GetPersoane();
+            bool actualizareCuSucces = false;
             try
             {
-                using (StreamWriter swFisierText = new StreamWriter(NumeFisier))
+                //instructiunea 'using' va apela la final swFisierText.Close();
+                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
                 {
-                    for (int i = 0; i < nrPersoane; i++)
+                    foreach (Persoana persoana in persoane)
                     {
-                        swFisierText.WriteLine(persoane[i].ConversieLaSir_PentruFisier());
+                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                        if (persoana.IdPersoana != persoanaActualizata.IdPersoana)
+                        {
+                            swFisierText.WriteLine(persoana.ConversieLaSir_PentruFisier());
+                        }
+                        else
+                        {
+                            swFisierText.WriteLine(persoanaActualizata.ConversieLaSir_PentruFisier());
+                        }
+                    }
+                    actualizareCuSucces = true;
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return actualizareCuSucces;
+
+        }
+
+
+        public Persoana GetPersoana(string nume, string prenume)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Persoana> GetPersoane(string cautare)
+        {
+            List<Persoana> persoane = GetPersoane();
+            List<Persoana> persoaneCautate = new List<Persoana>();
+            foreach(var pers in persoane)
+            {
+                if(pers.Nume.Contains(cautare) || pers.Prenume.Contains(cautare))
+                {
+                    persoaneCautate.Add(pers);
+                }
+            }
+            return persoaneCautate;
+        }
+
+        private int GetId()
+        {
+            int IdPersoana = ID_PRIMA_PERSOANA;
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Persoana s = new Persoana(line);
+                        IdPersoana = s.IdPersoana + INCREMENT;
                     }
                 }
             }
@@ -92,7 +156,56 @@ namespace NivelAccesDate
             {
                 throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
             }
-            return false;
+            return IdPersoana;
+        }
+
+        public bool StergePersoana(int id)
+        {
+            List<Persoana> persoane = GetPersoane();
+            bool actualizareCuSucces = false;
+            try
+            {
+                //instructiunea 'using' va apela la final swFisierText.Close();
+                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
+                {
+                    foreach (Persoana persoana in persoane)
+                    {
+                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                        if (persoana.IdPersoana != id)
+                        {
+                            swFisierText.WriteLine(persoana.ConversieLaSir_PentruFisier());
+                        }
+                    }
+                    actualizareCuSucces = true;
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return actualizareCuSucces;
+        }
+
+
+        public List<Persoana> CautareDupaDataCurenta()
+        {
+            List<Persoana> contacte = GetPersoane();
+            List<Persoana> sarbatoriti = new List<Persoana>();
+            foreach(var contact in contacte)
+            {
+                if(contact.DataNasterii.Day == DateTime.Now.Day && contact.DataNasterii.Month == DateTime.Now.Month)
+                {
+                    sarbatoriti.Add(contact);
+                }
+            }
+
+            return sarbatoriti;
         }
     }
 }

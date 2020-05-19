@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using NivelModele;
 using NivelAccesDate;
+using System.Collections;
+
 namespace Agenda
 {
     class Program
@@ -37,22 +39,24 @@ namespace Agenda
 
         }
 
-        static void AfisarePersoane(Persoana[] persoane,int nrPersoane)
+        static void AfisarePersoane(ArrayList persoane)
         {
-            for(int i = 0; i < nrPersoane; i++)
+            foreach(Persoana pers in persoane)
             {
-                Console.WriteLine(persoane[i]);
+                Console.WriteLine(pers);
             }
         }
 
-        static int CautaPersoana(Persoana[] persoane,int nrPersoane, string nume, string prenume)
+        static int CautaPersoana(ArrayList persoane, string nume, string prenume)
         {
-            for(int i = 0; i < nrPersoane; i++)
+            int i = 0;
+            foreach(Persoana pers in persoane)
             {
-                if(persoane[i].NumeComplet.Equals(nume+" " + prenume))
+                if(pers.NumeComplet.Equals(nume+" " + prenume))
                 {
                     return i;
                 }
+                i++;
             }
             return -1;
         }
@@ -87,10 +91,10 @@ namespace Agenda
         static void Main(string[] args)
         {
             bool ok = true;
-            Persoana[] persoane;
+            ArrayList persoane;
             IStocareData adminPersoane = StocareFactory.GetAdministratorStocare();
             int nrPersoane;
-            persoane = adminPersoane.GetPersoane(out nrPersoane);
+            persoane = adminPersoane.GetPersoane();
             string optiune;
             while (ok==true)
             {
@@ -99,12 +103,11 @@ namespace Agenda
                 switch (optiune)
                 {
                     case "L":
-                        AfisarePersoane(persoane, nrPersoane);
+                        AfisarePersoane(persoane);
                         break;
                     case "A":
                         Persoana pers = citirePersoana();
-                        persoane[nrPersoane] = pers;
-                        nrPersoane++;
+                        persoane.Add(pers);
                         adminPersoane.AddPersoana(pers);
                         break;
                     case "M":
@@ -112,7 +115,8 @@ namespace Agenda
                         string nume = Console.ReadLine();
                         Console.WriteLine("Introduceti prenumele persoanei de cautat: ");
                         string prenume = Console.ReadLine();
-                        int gasit = CautaPersoana(persoane,nrPersoane,nume, prenume);
+                        int gasit = CautaPersoana(persoane,nume, prenume);
+                        /*
                         if (gasit != -1)
                         {
                             ModificarePersoana(persoane, gasit);
@@ -122,6 +126,7 @@ namespace Agenda
                         {
                             Console.WriteLine("Nu exista persoana cautata!!");
                         }
+                        */
                         break;
                     case "X":
                         ok = false;

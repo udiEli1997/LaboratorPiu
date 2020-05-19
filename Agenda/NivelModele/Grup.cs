@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace NivelModele
 {
-    public enum Grup { Necunoscut, Prieteni, Servici, Familie };
+    [Flags]
+    public enum Grup { Necunoscut=0, Prieteni=1, Servici=2, Familie=4 };
 }

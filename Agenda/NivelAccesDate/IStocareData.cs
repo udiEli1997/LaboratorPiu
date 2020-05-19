@@ -4,13 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NivelModele;
+using System.Collections;
+
 namespace NivelAccesDate
 {
     public interface IStocareData
     {
         void AddPersoana(Persoana s);
-        Persoana[] GetPersoane(out int nrPersoane);
+        List<Persoana> GetPersoane();
 
-        bool UpdatePersoana(Persoana[] persoane, int nrPersoane);
+        List<Persoana> GetPersoane(string cautare);
+
+        Persoana GetPersoana(string nume, string prenume);
+
+        bool UpdatePersoana(Persoana persoanaActualizata);
+
+        bool StergePersoana(int id);
+
+        List<Persoana> CautareDupaDataCurenta();
     }
 }
