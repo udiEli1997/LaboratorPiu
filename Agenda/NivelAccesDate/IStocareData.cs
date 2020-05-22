@@ -22,5 +22,7 @@ namespace NivelAccesDate
         bool StergePersoana(int id);
 
         List<Persoana> CautareDupaDataCurenta();
+
+        List<Persoana> FiltrareDupaDataActualizarii(DateTime data1, DateTime data2);
     }
 }

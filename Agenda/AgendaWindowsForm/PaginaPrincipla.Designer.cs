@@ -67,6 +67,7 @@
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.addButton);
             this.Name = "PaginaPrincipla";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";
             this.ResumeLayout(false);
 

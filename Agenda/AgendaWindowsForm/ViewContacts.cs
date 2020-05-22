@@ -43,6 +43,8 @@ namespace AgendaWindowsForm
             }
         }
 
+        
+
 
         private List<Persoana> GetContactsList()
         {
@@ -80,6 +82,7 @@ namespace AgendaWindowsForm
             txtEmail.Text = pers.Email;
             txtGrup.Text = string.Join(" ", pers.Grupuri); ;
             txtDataNasterii.Text = pers.DataNasterii.ToShortDateString();
+            txtGen.Text = pers.Gen.ToString();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -112,6 +115,38 @@ namespace AgendaWindowsForm
             txtEmail.Text = string.Empty;
             txtDataNasterii.Text = string.Empty;
             txtGrup.Text = string.Empty;
+            txtGen.Text = string.Empty;
+        }
+
+        private void resetareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActualizareLista();
+        }
+
+        private void Filtrare(DateTime date1,DateTime date2)
+        {
+            List<Persoana> filtrare = adminPersoane.FiltrareDupaDataActualizarii(date1, date2);
+            contactsList.Items.Clear();
+            foreach (var pers in filtrare)
+            {
+                var row = new string[] { pers.Nume, pers.Prenume, pers.NumarTelefon };
+                var lvi = new ListViewItem(row);
+
+                lvi.Tag = pers;
+
+                contactsList.Items.Add(lvi);
+            }
+        }
+
+        private void filtrareDataActualizareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FiltrareData filtare = new FiltrareData())
+            {
+                if (filtare.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Filtrare(filtare.Dela, filtare.PanaLa);
+                }
+            }
         }
     }
 }

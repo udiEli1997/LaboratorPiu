@@ -53,6 +53,12 @@
     <Compile Include="EditContact.Designer.cs">
       <DependentUpon>EditContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiltrareData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltrareData.Designer.cs">
+      <DependentUpon>FiltrareData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="EditContact.resx">
       <DependentUpon>EditContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltrareData.resx">
+      <DependentUpon>FiltrareData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -120,7 +120,16 @@ namespace AgendaWindowsForm
                 {
                     gr = Grup.Necunoscut;
                 }
-                Persoana pers = new Persoana(txtName.Text, txtPrenume.Text, txtEmail.Text, txtTelefon.Text, gr, dataNastere.Value);
+                Gen gen = Gen.Neutru;
+                if (rbMasculin.Checked)
+                {
+                    gen = Gen.Masculin;
+                }
+                else if (rbFeminin.Checked)
+                {
+                    gen = Gen.Feminin;
+                }
+                Persoana pers = new Persoana(txtName.Text, txtPrenume.Text, txtEmail.Text, txtTelefon.Text, gr, dataNastere.Value,DateTime.Now,gen);
                 adminContacte.AddPersoana(pers);
                 ResetareControale();
                 Close();

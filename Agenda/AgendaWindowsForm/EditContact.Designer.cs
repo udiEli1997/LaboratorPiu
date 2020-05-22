@@ -40,12 +40,16 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbGrup = new System.Windows.Forms.GroupBox();
+            this.ckFamilie = new System.Windows.Forms.CheckBox();
+            this.ckServici = new System.Windows.Forms.CheckBox();
+            this.ckPrieteni = new System.Windows.Forms.CheckBox();
             this.dataNasterii = new System.Windows.Forms.DateTimePicker();
             this.lblDataNastere = new System.Windows.Forms.Label();
-            this.ckPrieteni = new System.Windows.Forms.CheckBox();
-            this.ckServici = new System.Windows.Forms.CheckBox();
-            this.ckFamilie = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbMasculin = new System.Windows.Forms.RadioButton();
+            this.rdbFeminin = new System.Windows.Forms.RadioButton();
             this.gbGrup.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNume
@@ -124,7 +128,7 @@
             // 
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Location = new System.Drawing.Point(12, 461);
+            this.btnEdit.Location = new System.Drawing.Point(12, 505);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(91, 61);
             this.btnEdit.TabIndex = 8;
@@ -135,7 +139,7 @@
             // 
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Location = new System.Drawing.Point(381, 461);
+            this.btnDelete.Location = new System.Drawing.Point(381, 505);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 61);
             this.btnDelete.TabIndex = 9;
@@ -156,6 +160,39 @@
             this.gbGrup.TabStop = false;
             this.gbGrup.Text = "Grup";
             // 
+            // ckFamilie
+            // 
+            this.ckFamilie.AutoSize = true;
+            this.ckFamilie.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ckFamilie.Location = new System.Drawing.Point(315, 46);
+            this.ckFamilie.Name = "ckFamilie";
+            this.ckFamilie.Size = new System.Drawing.Size(96, 29);
+            this.ckFamilie.TabIndex = 2;
+            this.ckFamilie.Text = "Familie";
+            this.ckFamilie.UseVisualStyleBackColor = true;
+            // 
+            // ckServici
+            // 
+            this.ckServici.AutoSize = true;
+            this.ckServici.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ckServici.Location = new System.Drawing.Point(163, 46);
+            this.ckServici.Name = "ckServici";
+            this.ckServici.Size = new System.Drawing.Size(93, 29);
+            this.ckServici.TabIndex = 1;
+            this.ckServici.Text = "Servici";
+            this.ckServici.UseVisualStyleBackColor = true;
+            // 
+            // ckPrieteni
+            // 
+            this.ckPrieteni.AutoSize = true;
+            this.ckPrieteni.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ckPrieteni.Location = new System.Drawing.Point(7, 46);
+            this.ckPrieteni.Name = "ckPrieteni";
+            this.ckPrieteni.Size = new System.Drawing.Size(99, 29);
+            this.ckPrieteni.TabIndex = 0;
+            this.ckPrieteni.Text = "Prieteni";
+            this.ckPrieteni.UseVisualStyleBackColor = true;
+            // 
             // dataNasterii
             // 
             this.dataNasterii.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,6 +204,7 @@
             // lblDataNastere
             // 
             this.lblDataNastere.AutoSize = true;
+            this.lblDataNastere.BackColor = System.Drawing.Color.Transparent;
             this.lblDataNastere.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNastere.Location = new System.Drawing.Point(17, 402);
             this.lblDataNastere.Name = "lblDataNastere";
@@ -174,38 +212,40 @@
             this.lblDataNastere.TabIndex = 12;
             this.lblDataNastere.Text = "Data Nastere";
             // 
-            // ckPrieteni
+            // groupBox1
             // 
-            this.ckPrieteni.AutoSize = true;
-            this.ckPrieteni.ForeColor = System.Drawing.Color.Blue;
-            this.ckPrieteni.Location = new System.Drawing.Point(7, 46);
-            this.ckPrieteni.Name = "ckPrieteni";
-            this.ckPrieteni.Size = new System.Drawing.Size(99, 29);
-            this.ckPrieteni.TabIndex = 0;
-            this.ckPrieteni.Text = "Prieteni";
-            this.ckPrieteni.UseVisualStyleBackColor = true;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.rdbFeminin);
+            this.groupBox1.Controls.Add(this.rdbMasculin);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(24, 443);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(404, 56);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gen";
             // 
-            // ckServici
+            // rdbMasculin
             // 
-            this.ckServici.AutoSize = true;
-            this.ckServici.ForeColor = System.Drawing.Color.Blue;
-            this.ckServici.Location = new System.Drawing.Point(142, 46);
-            this.ckServici.Name = "ckServici";
-            this.ckServici.Size = new System.Drawing.Size(93, 29);
-            this.ckServici.TabIndex = 1;
-            this.ckServici.Text = "Servici";
-            this.ckServici.UseVisualStyleBackColor = true;
+            this.rdbMasculin.AutoSize = true;
+            this.rdbMasculin.Location = new System.Drawing.Point(125, 27);
+            this.rdbMasculin.Name = "rdbMasculin";
+            this.rdbMasculin.Size = new System.Drawing.Size(50, 29);
+            this.rdbMasculin.TabIndex = 0;
+            this.rdbMasculin.TabStop = true;
+            this.rdbMasculin.Text = "M";
+            this.rdbMasculin.UseVisualStyleBackColor = true;
             // 
-            // ckFamilie
+            // rdbFeminin
             // 
-            this.ckFamilie.AutoSize = true;
-            this.ckFamilie.ForeColor = System.Drawing.Color.Blue;
-            this.ckFamilie.Location = new System.Drawing.Point(315, 46);
-            this.ckFamilie.Name = "ckFamilie";
-            this.ckFamilie.Size = new System.Drawing.Size(96, 29);
-            this.ckFamilie.TabIndex = 2;
-            this.ckFamilie.Text = "Familie";
-            this.ckFamilie.UseVisualStyleBackColor = true;
+            this.rdbFeminin.AutoSize = true;
+            this.rdbFeminin.Location = new System.Drawing.Point(253, 27);
+            this.rdbFeminin.Name = "rdbFeminin";
+            this.rdbFeminin.Size = new System.Drawing.Size(45, 29);
+            this.rdbFeminin.TabIndex = 1;
+            this.rdbFeminin.TabStop = true;
+            this.rdbFeminin.Text = "F";
+            this.rdbFeminin.UseVisualStyleBackColor = true;
             // 
             // EditContact
             // 
@@ -213,7 +253,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(484, 534);
+            this.ClientSize = new System.Drawing.Size(484, 578);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblDataNastere);
             this.Controls.Add(this.dataNasterii);
             this.Controls.Add(this.gbGrup);
@@ -229,9 +270,12 @@
             this.Controls.Add(this.lblNume);
             this.DoubleBuffered = true;
             this.Name = "EditContact";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditContact";
             this.gbGrup.ResumeLayout(false);
             this.gbGrup.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +299,8 @@
         private System.Windows.Forms.CheckBox ckFamilie;
         private System.Windows.Forms.CheckBox ckServici;
         private System.Windows.Forms.CheckBox ckPrieteni;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbFeminin;
+        private System.Windows.Forms.RadioButton rdbMasculin;
     }
 }

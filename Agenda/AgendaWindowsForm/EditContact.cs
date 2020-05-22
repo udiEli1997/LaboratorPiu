@@ -40,6 +40,14 @@ namespace AgendaWindowsForm
             }
             dataNasterii.Value = pers.DataNasterii;
             id = pers.IdPersoana;
+            if (pers.Gen == Gen.Masculin)
+            {
+                rdbMasculin.Checked = true;
+            }
+            if(pers.Gen == Gen.Feminin)
+            {
+                rdbFeminin.Checked = true;
+            }
             adminPersoane = StocareFactory.GetAdministratorStocare();
         }
 
@@ -64,7 +72,16 @@ namespace AgendaWindowsForm
                 {
                     gr = Grup.Necunoscut;
                 }
-                Persoana persActualizat = new Persoana(txtNume.Text, txtPrenume.Text, txtEmail.Text, txtTelefon.Text, gr,dataNasterii.Value);
+                Gen gen = Gen.Neutru;
+                if (rdbMasculin.Checked)
+                {
+                    gen = Gen.Masculin;
+                }
+                else if (rdbFeminin.Checked)
+                {
+                    gen = Gen.Feminin;
+                }
+                Persoana persActualizat = new Persoana(txtNume.Text, txtPrenume.Text, txtEmail.Text, txtTelefon.Text, gr,dataNasterii.Value,DateTime.Now,gen);
                 persActualizat.IdPersoana = id;
                 adminPersoane.UpdatePersoana(persActualizat);
                 Close();

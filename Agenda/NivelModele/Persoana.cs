@@ -38,6 +38,10 @@ namespace NivelModele
 
         public DateTime DataNasterii { get; set; }
 
+        public DateTime DataActualizare { get; set; }
+
+        public Gen Gen { get; set; }
+
         public List<string> Grupuri { get; set;}
         public Grup Grup
         {
@@ -89,7 +93,7 @@ namespace NivelModele
             }
         }
 
-        public Persoana(string _nume,string _prenume,string _email,string _numar,Grup _grup,DateTime _dataNasterii)
+        public Persoana(string _nume,string _prenume,string _email,string _numar,Grup _grup,DateTime _dataNasterii,DateTime _dataActualizare,Gen _gen)
         {
             //constructor cu datele de initializare separate
             Nume = _nume;
@@ -98,6 +102,8 @@ namespace NivelModele
             NumarTelefon = _numar;
             grup = _grup;
             DataNasterii = _dataNasterii;
+            DataActualizare = _dataActualizare;
+            Gen = _gen;
             
         }
 
@@ -120,6 +126,8 @@ namespace NivelModele
             }
             //Enum.TryParse(date[GRUP],out grup);
             DataNasterii = DateTime.Parse(date[6]);
+            DataActualizare = DateTime.Parse(date[7]);
+            Gen = (Gen)Enum.Parse(typeof(Gen), date[8]);
         }
 
         override
@@ -136,7 +144,7 @@ namespace NivelModele
 
         public string ConversieLaSir_PentruFisier()
         {
-            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}", SEPARATOR_PRINCIPAL_FISIER,IdPersoana, (Nume ?? " NECUNOSCUT "), (Prenume ?? " NECUNOSCUT "), (Email ?? " NECUNOSCUT "), (NumarTelefon ?? " NECUNOSCUT "), GrupuriAsString,DataNasterii.ToShortDateString());
+            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}", SEPARATOR_PRINCIPAL_FISIER,IdPersoana, (Nume ?? " NECUNOSCUT "), (Prenume ?? " NECUNOSCUT "), (Email ?? " NECUNOSCUT "), (NumarTelefon ?? " NECUNOSCUT "), GrupuriAsString,DataNasterii.ToShortDateString(),DataActualizare.ToShortDateString(),Gen.ToString());
         }
 
     }

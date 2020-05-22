@@ -207,5 +207,21 @@ namespace NivelAccesDate
 
             return sarbatoriti;
         }
+
+        public List<Persoana> FiltrareDupaDataActualizarii(DateTime data1, DateTime data2)
+        {
+            List<Persoana> contacte = GetPersoane();
+            List<Persoana> filtrare = new List<Persoana>();
+            foreach(var contact in contacte)
+            {
+                if(contact.DataActualizare.CompareTo(data1)>=0 && contact.DataActualizare.CompareTo(data2)<=0)
+                {
+                    filtrare.Add(contact);
+                }
+            }
+
+            return filtrare;
+
+        }
     }
 }

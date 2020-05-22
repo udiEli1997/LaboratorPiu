@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewContacts));
             this.contactsList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.meniuLista = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.resetareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtrareDataActualizareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtCautare = new System.Windows.Forms.TextBox();
             this.lblCauta = new System.Windows.Forms.Label();
             this.cautaImagine = new System.Windows.Forms.PictureBox();
@@ -50,6 +54,9 @@
             this.lblPrenume = new System.Windows.Forms.Label();
             this.txtNume = new System.Windows.Forms.TextBox();
             this.lblNume = new System.Windows.Forms.Label();
+            this.lblGen = new System.Windows.Forms.Label();
+            this.txtGen = new System.Windows.Forms.TextBox();
+            this.meniuLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cautaImagine)).BeginInit();
             this.panouAfisare.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +67,7 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.contactsList.ContextMenuStrip = this.meniuLista;
             this.contactsList.FullRowSelect = true;
             this.contactsList.GridLines = true;
             this.contactsList.Location = new System.Drawing.Point(13, 33);
@@ -84,6 +92,29 @@
             // 
             this.columnHeader3.Text = "Telefon";
             this.columnHeader3.Width = 100;
+            // 
+            // meniuLista
+            // 
+            this.meniuLista.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.meniuLista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetareToolStripMenuItem,
+            this.filtrareDataActualizareToolStripMenuItem});
+            this.meniuLista.Name = "meniuLista";
+            this.meniuLista.Size = new System.Drawing.Size(239, 52);
+            // 
+            // resetareToolStripMenuItem
+            // 
+            this.resetareToolStripMenuItem.Name = "resetareToolStripMenuItem";
+            this.resetareToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
+            this.resetareToolStripMenuItem.Text = "Resetare";
+            this.resetareToolStripMenuItem.Click += new System.EventHandler(this.resetareToolStripMenuItem_Click);
+            // 
+            // filtrareDataActualizareToolStripMenuItem
+            // 
+            this.filtrareDataActualizareToolStripMenuItem.Name = "filtrareDataActualizareToolStripMenuItem";
+            this.filtrareDataActualizareToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
+            this.filtrareDataActualizareToolStripMenuItem.Text = "Filtrare Data Actualizare";
+            this.filtrareDataActualizareToolStripMenuItem.Click += new System.EventHandler(this.filtrareDataActualizareToolStripMenuItem_Click);
             // 
             // txtCautare
             // 
@@ -117,6 +148,8 @@
             this.panouAfisare.BackColor = System.Drawing.SystemColors.Control;
             this.panouAfisare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panouAfisare.BackgroundImage")));
             this.panouAfisare.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panouAfisare.Controls.Add(this.txtGen);
+            this.panouAfisare.Controls.Add(this.lblGen);
             this.panouAfisare.Controls.Add(this.btnEdit);
             this.panouAfisare.Controls.Add(this.txtDataNasterii);
             this.panouAfisare.Controls.Add(this.lblData);
@@ -140,7 +173,7 @@
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Location = new System.Drawing.Point(3, 270);
+            this.btnEdit.Location = new System.Drawing.Point(107, 319);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(124, 81);
             this.btnEdit.TabIndex = 12;
@@ -267,6 +300,25 @@
             this.lblNume.TabIndex = 0;
             this.lblNume.Text = "Nume";
             // 
+            // lblGen
+            // 
+            this.lblGen.AutoSize = true;
+            this.lblGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGen.Location = new System.Drawing.Point(8, 270);
+            this.lblGen.Name = "lblGen";
+            this.lblGen.Size = new System.Drawing.Size(49, 25);
+            this.lblGen.TabIndex = 13;
+            this.lblGen.Text = "Gen";
+            // 
+            // txtGen
+            // 
+            this.txtGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGen.Location = new System.Drawing.Point(107, 267);
+            this.txtGen.Name = "txtGen";
+            this.txtGen.ReadOnly = true;
+            this.txtGen.Size = new System.Drawing.Size(314, 30);
+            this.txtGen.TabIndex = 14;
+            // 
             // ViewContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -279,8 +331,10 @@
             this.Controls.Add(this.txtCautare);
             this.Controls.Add(this.contactsList);
             this.Name = "ViewContacts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewContacts";
             this.Load += new System.EventHandler(this.ViewContacts_Load);
+            this.meniuLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cautaImagine)).EndInit();
             this.panouAfisare.ResumeLayout(false);
             this.panouAfisare.PerformLayout();
@@ -312,5 +366,10 @@
         private System.Windows.Forms.TextBox txtNume;
         private System.Windows.Forms.Label lblNume;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ContextMenuStrip meniuLista;
+        private System.Windows.Forms.ToolStripMenuItem resetareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtrareDataActualizareToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtGen;
+        private System.Windows.Forms.Label lblGen;
     }
 }
