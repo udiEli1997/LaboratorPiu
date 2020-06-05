@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewContacts));
             this.contactsList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,6 +40,8 @@
             this.lblCauta = new System.Windows.Forms.Label();
             this.cautaImagine = new System.Windows.Forms.PictureBox();
             this.panouAfisare = new System.Windows.Forms.Panel();
+            this.txtGen = new System.Windows.Forms.TextBox();
+            this.lblGen = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtDataNasterii = new System.Windows.Forms.TextBox();
             this.lblData = new System.Windows.Forms.Label();
@@ -54,8 +55,6 @@
             this.lblPrenume = new System.Windows.Forms.Label();
             this.txtNume = new System.Windows.Forms.TextBox();
             this.lblNume = new System.Windows.Forms.Label();
-            this.lblGen = new System.Windows.Forms.Label();
-            this.txtGen = new System.Windows.Forms.TextBox();
             this.meniuLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cautaImagine)).BeginInit();
             this.panouAfisare.SuspendLayout();
@@ -135,7 +134,7 @@
             // 
             // cautaImagine
             // 
-            this.cautaImagine.Image = ((System.Drawing.Image)(resources.GetObject("cautaImagine.Image")));
+            this.cautaImagine.Image = global::AgendaWindowsForm.Properties.Resources.download;
             this.cautaImagine.Location = new System.Drawing.Point(77, 5);
             this.cautaImagine.Name = "cautaImagine";
             this.cautaImagine.Size = new System.Drawing.Size(23, 21);
@@ -146,7 +145,7 @@
             // panouAfisare
             // 
             this.panouAfisare.BackColor = System.Drawing.SystemColors.Control;
-            this.panouAfisare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panouAfisare.BackgroundImage")));
+            this.panouAfisare.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.info_user;
             this.panouAfisare.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panouAfisare.Controls.Add(this.txtGen);
             this.panouAfisare.Controls.Add(this.lblGen);
@@ -168,10 +167,29 @@
             this.panouAfisare.Size = new System.Drawing.Size(430, 451);
             this.panouAfisare.TabIndex = 4;
             // 
+            // txtGen
+            // 
+            this.txtGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGen.Location = new System.Drawing.Point(107, 267);
+            this.txtGen.Name = "txtGen";
+            this.txtGen.ReadOnly = true;
+            this.txtGen.Size = new System.Drawing.Size(314, 30);
+            this.txtGen.TabIndex = 14;
+            // 
+            // lblGen
+            // 
+            this.lblGen.AutoSize = true;
+            this.lblGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGen.Location = new System.Drawing.Point(8, 270);
+            this.lblGen.Name = "lblGen";
+            this.lblGen.Size = new System.Drawing.Size(49, 25);
+            this.lblGen.TabIndex = 13;
+            this.lblGen.Text = "Gen";
+            // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
+            this.btnEdit.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.Edit_Male_User_icon;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Location = new System.Drawing.Point(107, 319);
             this.btnEdit.Name = "btnEdit";
@@ -299,25 +317,6 @@
             this.lblNume.Size = new System.Drawing.Size(64, 25);
             this.lblNume.TabIndex = 0;
             this.lblNume.Text = "Nume";
-            // 
-            // lblGen
-            // 
-            this.lblGen.AutoSize = true;
-            this.lblGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGen.Location = new System.Drawing.Point(8, 270);
-            this.lblGen.Name = "lblGen";
-            this.lblGen.Size = new System.Drawing.Size(49, 25);
-            this.lblGen.TabIndex = 13;
-            this.lblGen.Text = "Gen";
-            // 
-            // txtGen
-            // 
-            this.txtGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGen.Location = new System.Drawing.Point(107, 267);
-            this.txtGen.Name = "txtGen";
-            this.txtGen.ReadOnly = true;
-            this.txtGen.Size = new System.Drawing.Size(314, 30);
-            this.txtGen.TabIndex = 14;
             // 
             // ViewContacts
             // 

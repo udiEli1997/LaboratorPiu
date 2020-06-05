@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditContact));
             this.lblNume = new System.Windows.Forms.Label();
             this.lblPrenume = new System.Windows.Forms.Label();
             this.lblTelefon = new System.Windows.Forms.Label();
@@ -46,8 +45,8 @@
             this.dataNasterii = new System.Windows.Forms.DateTimePicker();
             this.lblDataNastere = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbMasculin = new System.Windows.Forms.RadioButton();
             this.rdbFeminin = new System.Windows.Forms.RadioButton();
+            this.rdbMasculin = new System.Windows.Forms.RadioButton();
             this.gbGrup.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -126,7 +125,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
+            this.btnEdit.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.green_check_mark_icon_291;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Location = new System.Drawing.Point(12, 505);
             this.btnEdit.Name = "btnEdit";
@@ -137,7 +136,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.White_x_in_red_rounded_square_svg1;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.Location = new System.Drawing.Point(381, 505);
             this.btnDelete.Name = "btnDelete";
@@ -225,17 +224,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gen";
             // 
-            // rdbMasculin
-            // 
-            this.rdbMasculin.AutoSize = true;
-            this.rdbMasculin.Location = new System.Drawing.Point(125, 27);
-            this.rdbMasculin.Name = "rdbMasculin";
-            this.rdbMasculin.Size = new System.Drawing.Size(50, 29);
-            this.rdbMasculin.TabIndex = 0;
-            this.rdbMasculin.TabStop = true;
-            this.rdbMasculin.Text = "M";
-            this.rdbMasculin.UseVisualStyleBackColor = true;
-            // 
             // rdbFeminin
             // 
             this.rdbFeminin.AutoSize = true;
@@ -247,11 +235,22 @@
             this.rdbFeminin.Text = "F";
             this.rdbFeminin.UseVisualStyleBackColor = true;
             // 
+            // rdbMasculin
+            // 
+            this.rdbMasculin.AutoSize = true;
+            this.rdbMasculin.Location = new System.Drawing.Point(125, 27);
+            this.rdbMasculin.Name = "rdbMasculin";
+            this.rdbMasculin.Size = new System.Drawing.Size(50, 29);
+            this.rdbMasculin.TabIndex = 0;
+            this.rdbMasculin.TabStop = true;
+            this.rdbMasculin.Text = "M";
+            this.rdbMasculin.UseVisualStyleBackColor = true;
+            // 
             // EditContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.edit_user;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(484, 578);
             this.Controls.Add(this.groupBox1);

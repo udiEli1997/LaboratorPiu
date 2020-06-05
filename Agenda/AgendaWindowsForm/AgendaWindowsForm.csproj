@@ -101,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ViewContacts.resx">
       <DependentUpon>ViewContacts.cs</DependentUpon>
@@ -127,6 +128,42 @@
       <Project>{d9a94dd4-ac0c-4ceb-8cdd-b3c61721890f}</Project>
       <Name>NivelModele</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1001361057.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1001387348 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit-Male-User-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-check-mark-icon-29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-check-mark-icon-29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-book.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_x_in_red_rounded_square.svg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_x_in_red_rounded_square.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

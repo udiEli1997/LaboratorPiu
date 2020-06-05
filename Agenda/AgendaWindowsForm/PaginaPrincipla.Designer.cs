@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaPrincipla));
             this.addButton = new System.Windows.Forms.Button();
             this.viewButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -36,7 +35,7 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.SystemColors.Control;
-            this.addButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addButton.BackgroundImage")));
+            this.addButton.BackgroundImage = global::AgendaWindowsForm.Properties.Resources._1001387348__1_;
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addButton.Location = new System.Drawing.Point(103, 261);
             this.addButton.Name = "addButton";
@@ -47,7 +46,7 @@
             // 
             // viewButton
             // 
-            this.viewButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("viewButton.BackgroundImage")));
+            this.viewButton.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.phone_book;
             this.viewButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.viewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewButton.Location = new System.Drawing.Point(303, 261);
@@ -61,11 +60,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.Contacts;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(482, 397);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.addButton);
+            this.DoubleBuffered = true;
             this.Name = "PaginaPrincipla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";

@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.addPanel = new System.Windows.Forms.Panel();
+            this.gbGen = new System.Windows.Forms.GroupBox();
+            this.rbFeminin = new System.Windows.Forms.RadioButton();
+            this.rbMasculin = new System.Windows.Forms.RadioButton();
             this.btnAdaugare = new System.Windows.Forms.Button();
             this.lblDataNasterii = new System.Windows.Forms.Label();
             this.gbGrup = new System.Windows.Forms.GroupBox();
@@ -41,12 +43,9 @@
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtPrenume = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.gbGen = new System.Windows.Forms.GroupBox();
-            this.rbMasculin = new System.Windows.Forms.RadioButton();
-            this.rbFeminin = new System.Windows.Forms.RadioButton();
             this.addPanel.SuspendLayout();
-            this.gbGrup.SuspendLayout();
             this.gbGen.SuspendLayout();
+            this.gbGrup.SuspendLayout();
             this.SuspendLayout();
             // 
             // addPanel
@@ -64,6 +63,40 @@
             this.addPanel.Name = "addPanel";
             this.addPanel.Size = new System.Drawing.Size(425, 452);
             this.addPanel.TabIndex = 8;
+            // 
+            // gbGen
+            // 
+            this.gbGen.BackColor = System.Drawing.Color.Transparent;
+            this.gbGen.Controls.Add(this.rbFeminin);
+            this.gbGen.Controls.Add(this.rbMasculin);
+            this.gbGen.Location = new System.Drawing.Point(78, 344);
+            this.gbGen.Name = "gbGen";
+            this.gbGen.Size = new System.Drawing.Size(276, 53);
+            this.gbGen.TabIndex = 10;
+            this.gbGen.TabStop = false;
+            this.gbGen.Text = "Gen:";
+            // 
+            // rbFeminin
+            // 
+            this.rbFeminin.AutoSize = true;
+            this.rbFeminin.Location = new System.Drawing.Point(176, 22);
+            this.rbFeminin.Name = "rbFeminin";
+            this.rbFeminin.Size = new System.Drawing.Size(37, 21);
+            this.rbFeminin.TabIndex = 1;
+            this.rbFeminin.TabStop = true;
+            this.rbFeminin.Text = "F";
+            this.rbFeminin.UseVisualStyleBackColor = true;
+            // 
+            // rbMasculin
+            // 
+            this.rbMasculin.AutoSize = true;
+            this.rbMasculin.Location = new System.Drawing.Point(49, 21);
+            this.rbMasculin.Name = "rbMasculin";
+            this.rbMasculin.Size = new System.Drawing.Size(40, 21);
+            this.rbMasculin.TabIndex = 0;
+            this.rbMasculin.TabStop = true;
+            this.rbMasculin.Text = "M";
+            this.rbMasculin.UseVisualStyleBackColor = true;
             // 
             // btnAdaugare
             // 
@@ -192,45 +225,11 @@
             this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
             this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
-            // gbGen
-            // 
-            this.gbGen.BackColor = System.Drawing.Color.Transparent;
-            this.gbGen.Controls.Add(this.rbFeminin);
-            this.gbGen.Controls.Add(this.rbMasculin);
-            this.gbGen.Location = new System.Drawing.Point(78, 344);
-            this.gbGen.Name = "gbGen";
-            this.gbGen.Size = new System.Drawing.Size(276, 53);
-            this.gbGen.TabIndex = 10;
-            this.gbGen.TabStop = false;
-            this.gbGen.Text = "Gen:";
-            // 
-            // rbMasculin
-            // 
-            this.rbMasculin.AutoSize = true;
-            this.rbMasculin.Location = new System.Drawing.Point(49, 21);
-            this.rbMasculin.Name = "rbMasculin";
-            this.rbMasculin.Size = new System.Drawing.Size(40, 21);
-            this.rbMasculin.TabIndex = 0;
-            this.rbMasculin.TabStop = true;
-            this.rbMasculin.Text = "M";
-            this.rbMasculin.UseVisualStyleBackColor = true;
-            // 
-            // rbFeminin
-            // 
-            this.rbFeminin.AutoSize = true;
-            this.rbFeminin.Location = new System.Drawing.Point(176, 22);
-            this.rbFeminin.Name = "rbFeminin";
-            this.rbFeminin.Size = new System.Drawing.Size(37, 21);
-            this.rbFeminin.TabIndex = 1;
-            this.rbFeminin.TabStop = true;
-            this.rbFeminin.Text = "F";
-            this.rbFeminin.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::AgendaWindowsForm.Properties.Resources._1001361057;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(632, 563);
             this.Controls.Add(this.addPanel);
@@ -241,10 +240,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.addPanel.ResumeLayout(false);
             this.addPanel.PerformLayout();
-            this.gbGrup.ResumeLayout(false);
-            this.gbGrup.PerformLayout();
             this.gbGen.ResumeLayout(false);
             this.gbGen.PerformLayout();
+            this.gbGrup.ResumeLayout(false);
+            this.gbGrup.PerformLayout();
             this.ResumeLayout(false);
 
         }
