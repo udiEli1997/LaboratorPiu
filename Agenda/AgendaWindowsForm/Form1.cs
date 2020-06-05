@@ -131,6 +131,7 @@ namespace AgendaWindowsForm
                 }
                 Persoana pers = new Persoana(txtName.Text, txtPrenume.Text, txtEmail.Text, txtTelefon.Text, gr, dataNastere.Value,DateTime.Now,gen);
                 adminContacte.AddPersoana(pers);
+                MessageBox.Show("Contactul a fost adaugat cu succes");
                 ResetareControale();
                 Close();
             }
@@ -138,8 +139,8 @@ namespace AgendaWindowsForm
 
         private bool ValidareIntrare()
         {
-            string nume = @"[a-zA-Z]+";
-            string prenume = @"[a-zA-Z]+";
+            string nume = @"^[a-zA-Z\s]+$";
+            string prenume = @"^[a-zA-Z\s]+$";
             string telefon = @"(^[0-9]{10}$)|(^\+[0-9]{2}\s+[0-9] 
                 {2}[0-9]{8}$)|(^[0-9]{3}-[0-9]{4}-[0-9]{4}$)";
             string email = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";

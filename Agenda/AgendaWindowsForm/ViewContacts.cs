@@ -56,7 +56,7 @@ namespace AgendaWindowsForm
             contactsList.Items.Clear();
             foreach (var pers in persoane)
             {
-                if (pers.Nume.Contains(cautare) || pers.Prenume.Contains(cautare))
+                if (pers.Nume.ToLower().Contains(cautare) || pers.Prenume.ToLower().Contains(cautare))
                 {
                     var row = new string[] { pers.Nume, pers.Prenume, pers.NumarTelefon };
                     var lvi = new ListViewItem(row);
@@ -70,7 +70,7 @@ namespace AgendaWindowsForm
 
         private void txtCautare_TextChanged(object sender, EventArgs e)
         {
-            UpdateList(txtCautare.Text);
+            UpdateList(txtCautare.Text.ToLower());
         }
 
         private void contactsList_MouseClick(object sender, MouseEventArgs e)
@@ -102,7 +102,7 @@ namespace AgendaWindowsForm
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show("Selectati un contact!!");
             }
 
         }

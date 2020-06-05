@@ -83,15 +83,19 @@ namespace AgendaWindowsForm
                 }
                 Persoana persActualizat = new Persoana(txtNume.Text, txtPrenume.Text, txtEmail.Text, txtTelefon.Text, gr,dataNasterii.Value,DateTime.Now,gen);
                 persActualizat.IdPersoana = id;
-                adminPersoane.UpdatePersoana(persActualizat);
+                if (adminPersoane.UpdatePersoana(persActualizat))
+                {
+                    MessageBox.Show("Actualizare cu succes!!");
+                }
+
                 Close();
             }
         }
 
         private bool ValidareIntrare()
         {
-            string nume = @"[a-zA-Z]+";
-            string prenume = @"[a-zA-Z]+";
+            string nume = @"^[a-zA-Z\s]+$";
+            string prenume = @"^[a-zA-Z\s]+$";
             string telefon = @"(^[0-9]{10}$)|(^\+[0-9]{2}\s+[0-9] 
                 {2}[0-9]{8}$)|(^[0-9]{3}-[0-9]{4}-[0-9]{4}$)";
             string email = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
@@ -115,7 +119,10 @@ namespace AgendaWindowsForm
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            adminPersoane.StergePersoana(id);
+            if (adminPersoane.StergePersoana(id))
+            {
+                MessageBox.Show("Stergere cu succes!!");
+            }
             Close();
         }
     }
