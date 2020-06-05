@@ -138,6 +138,21 @@ namespace AgendaWindowsForm
             }
         }
 
+        private void FiltrareGrup(Grup gp)
+        {
+            List<Persoana> filtrare = adminPersoane.FiltrareDupaGrup(gp);
+            contactsList.Items.Clear();
+            foreach (var pers in filtrare)
+            {
+                var row = new string[] { pers.Nume, pers.Prenume, pers.NumarTelefon };
+                var lvi = new ListViewItem(row);
+
+                lvi.Tag = pers;
+
+                contactsList.Items.Add(lvi);
+            }
+        }
+
         private void filtrareDataActualizareToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FiltrareData filtare = new FiltrareData())
@@ -145,6 +160,17 @@ namespace AgendaWindowsForm
                 if (filtare.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     Filtrare(filtare.Dela, filtare.PanaLa);
+                }
+            }
+        }
+
+        private void filtrareDupaGrupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FiltrareGrup filtare = new FiltrareGrup())
+            {
+                if (filtare.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    FiltrareGrup(filtare.grup);
                 }
             }
         }

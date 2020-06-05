@@ -119,7 +119,8 @@ namespace NivelModele
             NumarTelefon = date[NUMAR];
             Grupuri = new List<string>();
             grup = Grup.Necunoscut;
-            //adauga mai multe elemente in lista de discipline
+            
+
             Grupuri.AddRange(date[GRUP].Split(SEPARATOR_SECUNDAR_FISIER));
             foreach(var gr in Grupuri)
             {

@@ -224,5 +224,20 @@ namespace NivelAccesDate
             return filtrare;
 
         }
+
+        public List<Persoana> FiltrareDupaGrup(Grup gr)
+        {
+            List<Persoana> contacte = GetPersoane();
+            List<Persoana> filtrare = new List<Persoana>();
+            foreach (var contact in contacte)
+            {
+                if ((contact.Grup & gr) == contact.Grup)
+                {
+                    filtrare.Add(contact);
+                }
+            }
+
+            return filtrare;
+        }
     }
 }

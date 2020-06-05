@@ -59,6 +59,12 @@
     <Compile Include="FiltrareData.Designer.cs">
       <DependentUpon>FiltrareData.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiltrareGrup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltrareGrup.Designer.cs">
+      <DependentUpon>FiltrareGrup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FiltrareData.resx">
       <DependentUpon>FiltrareData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltrareGrup.resx">
+      <DependentUpon>FiltrareGrup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -164,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\White_x_in_red_rounded_square.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-907579860-170667a.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

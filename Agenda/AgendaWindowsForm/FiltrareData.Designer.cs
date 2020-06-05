@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiltrareData));
             this.dataDela = new System.Windows.Forms.DateTimePicker();
             this.dataPanaLa = new System.Windows.Forms.DateTimePicker();
             this.lblDela = new System.Windows.Forms.Label();
@@ -92,7 +91,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::AgendaWindowsForm.Properties.Resources.istockphoto_907579860_170667a;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(387, 320);
             this.Controls.Add(this.btnCautare);

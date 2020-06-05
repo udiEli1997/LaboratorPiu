@@ -25,5 +25,7 @@ namespace NivelAccesDate
         List<Persoana> CautareDupaDataCurenta();
 
         List<Persoana> FiltrareDupaDataActualizarii(DateTime data1, DateTime data2);
+
+        List<Persoana> FiltrareDupaGrup(Grup gr);
     }
 }

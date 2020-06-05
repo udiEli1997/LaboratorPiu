@@ -55,6 +55,7 @@
             this.lblPrenume = new System.Windows.Forms.Label();
             this.txtNume = new System.Windows.Forms.TextBox();
             this.lblNume = new System.Windows.Forms.Label();
+            this.filtrareDupaGrupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meniuLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cautaImagine)).BeginInit();
             this.panouAfisare.SuspendLayout();
@@ -97,9 +98,10 @@
             this.meniuLista.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.meniuLista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.resetareToolStripMenuItem,
-            this.filtrareDataActualizareToolStripMenuItem});
+            this.filtrareDataActualizareToolStripMenuItem,
+            this.filtrareDupaGrupToolStripMenuItem});
             this.meniuLista.Name = "meniuLista";
-            this.meniuLista.Size = new System.Drawing.Size(239, 52);
+            this.meniuLista.Size = new System.Drawing.Size(239, 104);
             // 
             // resetareToolStripMenuItem
             // 
@@ -318,6 +320,13 @@
             this.lblNume.TabIndex = 0;
             this.lblNume.Text = "Nume";
             // 
+            // filtrareDupaGrupToolStripMenuItem
+            // 
+            this.filtrareDupaGrupToolStripMenuItem.Name = "filtrareDupaGrupToolStripMenuItem";
+            this.filtrareDupaGrupToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
+            this.filtrareDupaGrupToolStripMenuItem.Text = "Filtrare Dupa Grup";
+            this.filtrareDupaGrupToolStripMenuItem.Click += new System.EventHandler(this.filtrareDupaGrupToolStripMenuItem_Click);
+            // 
             // ViewContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -370,5 +379,6 @@
         private System.Windows.Forms.ToolStripMenuItem filtrareDataActualizareToolStripMenuItem;
         private System.Windows.Forms.TextBox txtGen;
         private System.Windows.Forms.Label lblGen;
+        private System.Windows.Forms.ToolStripMenuItem filtrareDupaGrupToolStripMenuItem;
     }
 }
